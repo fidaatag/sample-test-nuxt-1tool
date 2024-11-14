@@ -16,11 +16,10 @@ const credential = reactive({
 const login = async () => {
   isLoading.value = true; // Start loading
 
-  const response = await useLogin(credential); // Directly pass credential
+  await useLogin(credential); // Directly pass credential
 
   isLoading.value = false; // Stop loading
 
-  console.log(response);
   router.push('/member/courses')
 
   

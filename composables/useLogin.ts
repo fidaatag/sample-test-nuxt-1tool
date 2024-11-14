@@ -13,10 +13,8 @@ export function useLogin(credentials: { email: string; password: string }) {
     requireAuth: false,
   })
     .then(response => {
-       console.log(response) 
 
       if (response.api_token) {
-        console.log('yes')
         // Menyimpan token ke cookies jika login berhasil
         Cookie.set('at', response.api_token)
       }
